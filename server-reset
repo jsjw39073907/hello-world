@@ -1,0 +1,27 @@
+##fix: 서버 재설정
+INFO : goott.spring.project1.controller.MovieController - get-login 팝업창 호출
+INFO : goott.spring.project1.controller.MovieController - post-login 접속
+INFO : goott.spring.project1.controller.MovieController - userId : jsjw3907
+INFO : goott.spring.project1.controller.MovieController - userPw : asdwoo12
+INFO : goott.spring.project1.service.MovieServiceImple - service 실행
+INFO : goott.spring.project1.service.MovieServiceImple - userId : jsjw3907
+INFO : goott.spring.project1.service.MovieServiceImple - userPw : asdwoo12
+INFO : goott.spring.project1.persistence.MovieDAOImple - dao imple
+INFO : goott.spring.project1.persistence.MovieDAOImple - userId : jsjw3907
+INFO : goott.spring.project1.persistence.MovieDAOImple - userPw : asdwoo12
+DEBUG: goott.spring.project1.MovieMapper.login - ==>  Preparing: select * from USER_INFO where USER_ID = ? and USER_PW = ? 
+DEBUG: goott.spring.project1.MovieMapper.login - ==> Parameters: jsjw3907(String), asdwoo12(String)
+DEBUG: goott.spring.project1.MovieMapper.login - <==      Total: 0
+INFO : goott.spring.project1.controller.MovieController - login : null
+
+각 controller, service, dao 마다 로그를 통해 값을 확인하고 Preparing, Parameters 값도 정상적으로 작동되나 Total이 0으로 나오는 오류
+
+원인
+비밀번호 암호화를 위해 pom.xml 설정 중 스프링 시큐리티 버전 오류로 잘못 삽입하여 비밀번호가 데이터베이스에 입력되는 과정에서 에러를 발생시킴
+
+해결
+1. Window -> preferences로 이동해서 Tomcat을 Remove 한 뒤 다시 Add로 추가
+
+2. 프로젝트의 Maven Dependencies로 이동하고 경로를 확인한 후 해당 폴더의 파일 모두 삭제
+
+출처 : https://namubada.net/87?category=777141
