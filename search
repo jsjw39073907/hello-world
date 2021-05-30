@@ -1,0 +1,52 @@
+<script>
+ 
+    $("#testInput").autocomplete({
+        source : function(request, response) {
+            $.ajax({
+                  url : "/get/test"
+                , type : "GET"
+                , data : {keyWord : $("#testInput").val()} // 검색 키워드
+                , success : function(data){ // 성공
+                    response(
+                        $.map(data, function(item) {
+                            return {
+                                  label : item.testNm    //목록에 표시되는 값
+                                , value : item.testNm    //선택 시 input창에 표시되는 값
+                                , idx : item.testIdx    // db 인덱스를 담을수 있음 (예제)
+                            };
+                        })
+                    );    //response
+                }
+                ,
+                error : function(){ //실패
+                    alert("통신에 실패했습니다.");
+                }
+            });
+        }
+        , minLength : 1    
+        , autoFocus : false    
+        , select : function(evt, ui) {
+            console.log("전체 data: " + JSON.stringify(ui));
+            console.log("db Index : " + ui.item.idx);
+            console.log("검색 데이터 : " + ui.item.value);
+        }
+        , focus : function(evt, ui) {
+            return false;
+        }
+        , close : function(evt) {
+        }
+    });
+ 
+</script>
+
+- source : input 필드에 타이핑시 동작
+
+- minLength : 조회를 위한 최소 글자수
+
+- autoFocus : 첫번째 항목 자동 포커스(기본값 : false)
+
+- select : 검색 리스트에서 해당 필드 선택시 select 이벤트가 발생
+
+- focus : 한글 오류 방지
+
+- close : 리스팅 창이 닫힐때 발생하는 이벤트
