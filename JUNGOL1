@@ -1,0 +1,70 @@
+package study;
+
+import java.util.Scanner;
+
+/**
+ * 2021-07-08 정준우
+ * 633 : 반복제어문1 - 자가진단6
+ * 
+ * */
+public class Study {
+	public static void main(String[] args) { 
+		
+	/* 1. 각 나라의 수도를 출력한다.
+	 * 2. 숫자를 입력받는다.
+	 * 3. 해당하는 나라의 수도를 출력한다. 
+	 * 4. 1-2-3 반복
+	 * 5. 번호 이외의 숫자가 입력되면 none을 출력하고 종료한다.
+	 * */
+		
+		int num;
+		int flag = 0;
+		
+		// 4.
+		while (true) { // true면 반복문이 종료된다.
+			
+			// 1.
+			System.out.println("1. Korea");
+			System.out.println("2. USA");
+			System.out.println("3. Japan");
+			System.out.println("4 China");
+			System.out.print("number? ");
+			
+			// 2.
+			Scanner sc = new Scanner(System.in);
+			num = sc.nextInt();
+			
+			// 3.
+			switch (num) {
+			case 1: {
+				System.out.println("\nSeoul\n");
+				break;
+			}
+			case 2: {
+				System.out.println("\nWashington\n");
+				break;
+			}
+			case 3: {
+				System.out.println("\nTokyo\n");
+				break;
+			}
+			case 4: {
+				System.out.println("\nBeijing\n");
+				break;
+			}
+			
+			// 5.
+			default:
+				System.out.println("\nnone\n");
+				flag = 1;
+				break;
+				
+			} // end switch
+			
+			if (flag == 1) break;
+			
+		} // end while
+		
+	} // end of main
+
+} // end of Class
