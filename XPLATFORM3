@@ -1,78 +1,51 @@
-엑스플랫폼에서 style와 Theme는 화면을 구성하는 화면요소들을 디자인하는 것을 의미한다.
+엑스플랫폼에서 style을 통해서 디자인을 할 수 있습니다.
 
-CSS 생성하기
+CSS 생성
 
-1. TypeDefinition에서 Image를 담기 위하여 폴더를 만든 것처럼 이번엔 CSS를 담을 폴더를 먼저 만든다.
+1. TypeDefinition에서 CSS를 담을 폴더를 만든다.
 2. File > New > File > Style Sheet(.css)를 선택한다.
-3. File name항목에 'MyCSS'를 입력하고 만들어 놓은 CSS 경로로 지정한다.
-4. 생성된 MyCSS.css에서 CSS Document를 우클릭하여 New Selector를 선택한다.
-5. XPlatform Elements에서 Static을 선택하고 'Add'버튼을 클릭한다.
-6. 우측의 'style' 속성 창에서 속성을 지정하면 Editor에 반영된다.
+3. File name항목에 '폴더명'을 입력하고 1번에서 만든 CSS 경로로 지정한다.
+4. 우클릭하여 New Selector를 선택한다.
+5. XPlatform Elements중 Static을 선택한다.
 
-// 모든 Static의 background를 #ecececff로 지정
+// 모든 Static의 background를 #ecececff로 설정
 Static
 {
 	background	: #ecececff;
 }
 
-// Static컴포넌트에 마우스 포인터를 위치시키는 경우 bordertype을 round 3 3으로 지정
-Static:mouseover
+
+// id속성값이 name인 경우 'Arial, 14, bold'로 변경
+#name
 {
-	bordertype	: round 3 3;
+	font		: Arial, 14,bold;
 }
 
-// id속성값이 sta_title인 경우에 font의 속성을 'dotum, 14, bold'로 지정
-#sta_title
+// Static컴포넌트 중에 class속성값이 'title'인 경우 '2 solid #cccccc'로 변경
+Static.title
 {
-	font		: dotum, 14,bold;
+	border		: 2 solid #cccccc;
 }
 
-// Static컴포넌트의 class속성값이 'sta_sub'인 경우 'border'속성을 '1 solid #c1c1c1ff'로 지정
-Static.sta_sub
-{
-	border		: 1 solid #c1c1c1ff;
-}
-
-// Combo컴포넌트의 하위 컴포넌트인 dropbutton의 'border'속성을 '1 solid #c1c1c1ff'로 지정
-Combo>#dropbutton
-{
-	border		: 1 solid #c1c1c1ff;
-}
-
-// Static중 usedecorate의 속성이 true인 경우에 border를 1 solid #dededeff로 지정
-Static[usedecorate="true"]
-{
-	border		: 1 solid #dededeff;
-}
-
-// Button, Combo, Spin의 font를 'dotum, 9'로 지정
+// Button, Combo, Spin의 font를 'Arial, 11'로 변경
 Button, Combo, Spin
 {
-	font		: dotum, 9;
+	font		: Arial, 11;
 }
 
 
-// spinbutton의 디자인의 속성을 바꾸는 것은 속성창에서 바로 바꿀 수 없다. 위와 동일한 방식으로 Child Selector는 CSS를 통해 작성한다.
+// spin은 일정 값으로 올리거나 줄이거나 할 때 사용하는 컴포넌트인데 button의 속성을 바꾸고 싶을땐 CSS를 통해 작성한다.
 
-Spin>#spinupbutton
+Spin>#spinUp
 {
 	align		: center middle;
 	background	: transparent;
-	border		: 0 none;
-	image		: URL('IMAGE::btn_spinup.png');
+	border		: 1 solid #cccccc;
 }
 
-Spin>#spindownbutton
+Spin>#spinDown
 {
 	align		: center middle;
 	background	: transparent;
-	border		: 0 none;
-	image		: URL('IMAGE::btn_spindown.png');
+	border		: 1 solid #cccccc;
 }
-
-
-
-
-
-
-출처 : 투비소프트 PLATFORM Design
