@@ -51,4 +51,28 @@ Button, Combo, Spin
 	font		: dotum, 9;
 }
 
+
+// spinbutton의 디자인의 속성을 바꾸는 것은 속성창에서 바로 바꿀 수 없다. 위와 동일한 방식으로 Child Selector는 CSS를 통해 작성한다.
+
+Spin>#spinupbutton
+{
+	align		: center middle;
+	background	: transparent;
+	border		: 0 none;
+	image		: URL('IMAGE::btn_spinup.png');
+}
+
+Spin>#spindownbutton
+{
+	align		: center middle;
+	background	: transparent;
+	border		: 0 none;
+	image		: URL('IMAGE::btn_spindown.png');
+}
+
+
+
+
+
+
 출처 : 투비소프트 PLATFORM Design
