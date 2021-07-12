@@ -1,0 +1,47 @@
+package study;
+
+import java.util.Scanner;
+
+/**
+ * 2021-07-12 정준우
+ * 135 : 반복제어문2 - 형성평가6
+ * 
+ * */
+public class Main {
+	public static void main(String[] args) { 
+		
+		/*
+		1. 두 개의 정수를 입력받는다.
+		2. 두 정수 사이의 3의 배수이거나 5의 배수인 수들의 합과 평균을 출력한다.
+		3. 평균은 반올림하여 소수 첫째자리까지 출력한다.
+
+		*/
+		
+		int num1, num2, i;
+		int sum = 0;
+		Scanner sc = new Scanner(System.in);
+		
+		num1 = sc.nextInt();
+		num2 = sc.nextInt();
+		
+		if (num1 >= num2) {
+			int temp;
+			temp = num1;
+			num1 = num2;
+			num2 = temp;
+		}
+		
+		for (i = 0; num1 <= num2; num1++) {
+			
+			if (num1 % 3 == 0 || num1 % 5 == 0) {
+				sum += num1;
+				i++;
+			}
+		}
+		System.out.println("sum : " + sum);
+		System.out.printf("avg : %.1f", (double)sum / i);
+		
+	} // end of main
+
+} // end of Class
+	
