@@ -1,0 +1,46 @@
+package study;
+
+import java.util.Scanner;
+
+/**
+ * 2021-07-08 정준우
+ * 633 : 반복제어문2 - 자가진단6
+ * 
+ * */
+public class Main {
+	public static void main(String[] args) { 
+		
+		/*
+		 * 1. 정수로 n개의 과목 점수를 입력받는다.
+		 * 2. 실수 평균을 구하여 출력한다.
+		 * 3. 평균이 80점 이상면 pass / 미만이면 fail이라고 출력한다.
+     * 4. 평균은 반올림하여 소수 첫째자리까지 출력한다.
+		 * */
+		
+		int input, score, i;
+		float avg = 0;
+		Scanner sc = new Scanner(System.in);
+		
+		input = sc.nextInt();
+		for (i = 0; i < input; i++) {
+			score = sc.nextInt();
+			avg += score;
+		}
+		
+		avg /= (float)i; // i == 4
+		
+		System.out.println("avg : " + String.format("%.1f",avg));
+		if (avg >= 80) 
+		{
+			System.out.println("pass");
+		}
+		
+		else 
+		{
+			System.out.println("fail");
+		}
+		
+		
+	} // end of main
+
+} // end of Class
