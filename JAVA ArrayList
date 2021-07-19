@@ -1,0 +1,51 @@
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+
+ * ArrayList 기본 다루기
+ */
+public class ArrayList {
+	
+	public static void main(String[] args) {
+		
+		// 1. 모든 동물을 담을 객체를 생성한다.
+		List<String> list = new ArrayList<String>(); // String 타입의 list 객체 생성
+		
+		// 2. 동물(객체)를 저장한다.
+		list.add("고슴도치");
+		list.add("토끼");
+		list.add("고양이");
+		list.add(1, "햄스터"); // 햄스터를 1번 인덱스로 저장
+		
+		// 3. 전체 동물 수를 검색한다. 
+		int count = list.size(); // .size() -> 저장된 총 객체 수 얻기 (객체 검색)
+		System.out.println("전체 동물 수 : " + count);
+		System.out.println();
+		
+		// 4. 특정 동물을 선택해서 확인한다.
+		String getAnimal = list.get(1); // .get() -> 1번 인덱스 객체를 꺼낸다.
+		System.out.println("1번 동물 : " + getAnimal);
+		System.out.println();
+		
+		// 5. 모든 동물을 반복문으로 보여준다.
+		for (int i = 0; i < list.size(); i++) { // 저장된 모든 동물 루핑
+			String str = list.get(i);
+			System.out.println(i + "번 동물 : " + str);
+		}
+		System.out.println();
+		
+		// 6. 손님이 햄스터와 고양이를 사려고 한다.
+		list.remove(1); // 1번 인덱스 삭제
+		list.remove("고양이"); // 고양이 삭제
+		
+		// 7. 남은 동물 확인
+		for (int i = 0; i < list.size(); i++) { // 저장된 모든 동물 루핑
+			String str = list.get(i);
+			System.out.println(i + "번 동물 : " + str);
+		}
+		System.out.println();
+		
+	}// end of main
+	
+} // end of class
