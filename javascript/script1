@@ -1,0 +1,25 @@
+입력값이 null이라면 모두를 한번에 체크하는 스크립트
+
+function IsNull(sValue) // 여기서 's'는 문자열을 뜻한다.
+
+{
+
+	if( String(sValue).valueOf() == "undefined") // valueOf()는 sValue의 값을 모두 반환해준다.
+
+	return true;
+
+	if( sValue == null )
+
+	return true;
+
+	if( ("x"+sValue == "xNaN") && ( new String(sValue.length).valueOf() == "undefined" ) )
+    
+	return true;
+
+	if( sValue.length == 0 ) // sValue의 길이가 0이라면
+
+	return true;
+
+	return false;
+
+}
