@@ -1,0 +1,25 @@
+설명
+문자열의 위치를 대소문자 구별없이 찾는다.
+
+1. sOrg   : 원래 문자열( 예 : "aaBBbbcc" )
+2. sFind  : 찾고자 하는 문자열( 예 : "bb" )
+3. nStart : 검색 시작위치 (옵션 : Default = 0) ( 예 : 1 )
+
+return
+- 성공 = 찾고자 하는 문자열의 시작위치 ( 예 : 4 )
+- 실패 = -1
+
+function Pos(sOrg, sFind, nStart)
+{
+
+if(IsNull(sOrg) || IsNull(sFind)) 
+
+return -1;
+
+if(IsNull(nStart)) 
+
+nStart = 0;
+
+return sOrg.indexOf(sFind, nStart);
+
+}
